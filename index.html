@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_test</title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" >
+    <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+    <div id="testDiv">
+        <p>信息：{{msg}}</p>
+        <p>年龄：{{age}}</p>
+        <p>lazy:{{lazy_test}}</p>
+        <div id="formWrapp">
+            <form action="">
+                信息：<input type="text" v-model="msg" placeholder="please input something"><mark>同步更新</mark><br />
+                年龄：<input v-model="age" number>   <mark>number</mark><br />
+                <label for="lazy">lazy：</label><input id="lazy" v-model="lazy_test" lazy>  <mark>改变同步更新</mark><br />
+                <code>&lt;input id=&quot;lazy&quot; v-model=&quot;lazy_test&quot; lazy&gt; </code>
+            </form>
+
+        </div>
+
+        <button @click="changeVal('shuffleld',$event)">点我</button>
+    </div>
+    <hr />
+    <p>－－－－－－－－－动态查找－－－－－－－－－</p>
+<div id="demo">
+    <input v-model="query">
+    <ul>
+        <li v-for="item in list | filterBy query"
+            transition="staggered"
+            stagger="100">
+          {{item.msg}}
+         </li>
+    </ul>
+</div>
+<hr />
+<p>---------------组件定义和使用-----------------</p>
+<div id="componTest">
+    <child msg="shuffleldGood"></child><br />
+    <code>&lt;child msg=&quot;shuffleldGood&quot;&gt;&lt;/child&gt;</code>
+    <example propB='222'></example>
+</div>
+    <script src="./static/js/vue.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</body>
+</html>
