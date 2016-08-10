@@ -36,7 +36,6 @@ var my_compon = Vue.extend({
              type: String,
              required: true
          }
-
      },
     template: '<span>{{ msg }}</span>'
 })
