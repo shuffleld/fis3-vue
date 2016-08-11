@@ -16,6 +16,42 @@ var vm = new Vue({
     }
 
 })
+var l = new Vue({
+    el:"#for_test",
+    data:{
+        lists:[{
+            text:'大家好'
+        },{
+            text:'我是刘迪'
+        },{
+            text:'英文名字：shuffleld'
+        }]
+    }
+})
+var i = new Vue({
+    el:'#if_test',
+    data:{
+        ok:true
+    },
+    methods:{
+        dochange: function(){
+            if(this.ok){
+                this.ok = false;
+            }else{
+                this.ok = true;
+            }
+        }
+    }
+
+})
+var guo = new Vue({
+    el:'#guolv',
+    data:{
+        textarea:'hello anyone hands up'
+    }
+
+})
+
 new Vue({
     el: '#demo',
     data: {
@@ -29,7 +65,9 @@ new Vue({
         ]
     }
 })
-
+Vue.filter('reverse', function (value) {
+    return value.split('').reverse().join('')
+})
 var my_compon = Vue.extend({
      props: {
          msg:{

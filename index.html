@@ -21,10 +21,10 @@
 
         </div>
 
-        <button @click="changeVal('shuffleld',$event)">点我</button>
+        <button @click="changeVal('shuffleld',$event)">点我输出</button>
     </div>
     <hr />
-    <p>－－－－－－－－－动态查找－－－－－－－－－</p>
+    <p>---------------动态查找---------------</p>
 <div id="demo">
     <input v-model="query">
     <ul>
@@ -41,6 +41,24 @@
     <child msg="shuffleldGood"></child><br />
     <code>&lt;child msg=&quot;shuffleldGood&quot;&gt;&lt;/child&gt;</code>
     <example propB='222'></example>
+</div>
+<p>---------------循环测试------------------</p>
+<div id="for_test">
+    <ul >
+        <li v-for="list in lists">{{list.text}} index:{{$index}}</li>
+    </ul>
+</div>
+<hr />
+<p>---------------判断测试--------------------</p>
+<div id="if_test">
+    <span v-if="ok">true</span>
+    <span v-else>false</span>
+    <div @click="dochange" class="changeBtn">变换</div>
+</div>
+<hr />
+<p>----------------过滤器测试---------------------</p>
+<div id="guolv">
+    <div>{{textarea | uppercase | reverse }}</div>
 </div>
     <script src="./static/js/vue.min.js"></script>
     <script src="./static/js/index.js"></script>
